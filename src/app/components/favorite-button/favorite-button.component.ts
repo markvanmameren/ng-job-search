@@ -10,5 +10,5 @@ import { Component, input, output } from '@angular/core';
 export class FavoriteButtonComponent {
   isFavorite = input.required<boolean>();
 
-  buttonClick = output<boolean>();
+  favoriteButtonClicked = output<boolean>();
 }

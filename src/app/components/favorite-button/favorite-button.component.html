@@ -1,3 +1,4 @@
-<button (click)="buttonClick.emit(!isFavorite())">
-  <span class="icon-star" [class.favorite]="isFavorite()"></span>
-</button>
+<button
+  [class.favorite]="false"
+  (click)="favoriteButtonClicked.emit(!isFavorite())"
+></button>

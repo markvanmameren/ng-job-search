@@ -22,6 +22,8 @@ h6 {
   font-weight: 600;
 }
 
-a {
+a,
+button,
+input[type="button"] {
   cursor: pointer;
 }
