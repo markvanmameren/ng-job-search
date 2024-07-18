@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
 import { DetailedJob, Job } from './app/types/job.interface';
 
-const DETAILED: Record<number, DetailedJob> = {
+export const DETAILED: Record<number, DetailedJob> = {
   75278: {
     id: 75278,
     companyName: 'Scroll.io',
@@ -199,7 +199,7 @@ const DETAILED: Record<number, DetailedJob> = {
   },
 };
 
-const ALL_JOBS: Job[] = [
+export const ALL_JOBS: Job[] = [
   {
     id: 98596,
     companyName: 'Kraken',

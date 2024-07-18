@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AllJobsComponent } from './components/all-jobs/all-jobs.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';
+import { FavoriteJobsComponent } from './components/favorite-jobs/favorite-jobs.component';
 import { JobDetailComponent } from './components/job-detail/job-detail.component';
 
 export const routes: Routes = [
@@ -16,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'favorites',
-    component: FavoritesComponent,
+    component: FavoriteJobsComponent,
   },
   {
     path: '**',

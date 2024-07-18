@@ -1,0 +1,4 @@
+.job {
+  display: flex;
+  flex-wrap: wrap;
+}

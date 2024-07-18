@@ -1,11 +1,11 @@
 header {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  justify-content: center;
+  gap: 10px;
 
-  fieldset {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  h1 {
+    text-align: center;
+    color: var(--color-text-secondary);
   }
 }

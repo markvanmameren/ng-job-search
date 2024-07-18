@@ -1,0 +1,27 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    flex-basis: 50%;
+
+    a {
+      flex-grow: 1;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 15px;
+      font-weight: 500;
+      transition: all 0.2s linear;
+
+      &.active {
+        background-color: var(--color-text-primary);
+        color: var(--color-text-invert);
+      }
+
+      &:not(.active) {
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+}

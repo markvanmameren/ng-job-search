@@ -18,4 +18,8 @@ export class JobService {
   public getJobDetail(jobId: string): Observable<DetailedJob> {
     return this.httpClient.get<DetailedJob>(`${jobsUrl}/${jobId}`);
   }
+
+  public setFavorite(jobId: number, setTo: boolean) {
+    alert(`TODO - ${jobId} - ${setTo}`);
+  }
 }

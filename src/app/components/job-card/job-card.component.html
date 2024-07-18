@@ -1,0 +1,12 @@
+<div class="job" role="gridcell">
+  <img [src]="job().companyLogo" />
+  <div class="details">
+    <p>{{ job().title }}</p>
+    <p>{{ job().companyName }}</p>
+    <p>{{ job().reference }}</p>
+  </div>
+  <app-favorite-button
+    [isFavorite]="false"
+    (setFavorite)="setFavorite(job().id, $event)"
+  ></app-favorite-button>
+</div>
