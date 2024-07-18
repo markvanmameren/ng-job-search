@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+
+  fieldset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
