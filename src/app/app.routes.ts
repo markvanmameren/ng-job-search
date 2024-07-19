@@ -5,21 +5,20 @@ import { JobDetailComponent } from './components/job-detail/job-detail.component
 
 export const routes: Routes = [
   {
+    path: 'jobs/:id',
+    component: JobDetailComponent,
+  },
+  {
     path: 'jobs',
     component: AllJobsComponent,
-    children: [
-      {
-        path: ':id',
-        component: JobDetailComponent,
-      },
-    ],
   },
   {
     path: 'favorites',
     component: FavoriteJobsComponent,
   },
   {
-    path: '**',
+    path: '',
+    pathMatch: 'full',
     redirectTo: 'jobs',
   },
 ];

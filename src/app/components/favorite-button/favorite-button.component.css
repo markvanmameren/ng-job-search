@@ -1,12 +1,11 @@
 button {
-  height: 20px;
-  width: 20px;
+  display: flex;
 
-  &:not(.favorite) {
-    background-color: red;
+  &:not(.favorite) svg.star {
+    color: var(--color-text-primary);
   }
 
-  &.favorite {
-    background-color: var(--color-favorite);
+  &.is-favorite svg.star {
+    color: var(--color-favorite);
   }
 }

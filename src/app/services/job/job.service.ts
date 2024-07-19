@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, map, Observable } from 'rxjs';
 import { DetailedJob, Job } from '../../types/job.interface';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 
 const jobsUrl = '/jobs';
 
@@ -10,9 +11,21 @@ const jobsUrl = '/jobs';
 })
 export class JobService {
   private httpClient = inject(HttpClient);
+  private localStorageService = inject(LocalStorageService);
 
   public getAllJobs(): Observable<Job[]> {
     return this.httpClient.get<Job[]>(jobsUrl);
+  }
+
+  public getFavoriteJobs(): Observable<Job[]> {
+    return combineLatest([
+      this.getAllJobs(),
+      this.localStorageService.favoriteIds$,
+    ]).pipe(
+      map(([jobs, favoriteIds]) =>
+        jobs.filter((job) => favoriteIds.includes(job.id))
+      )
+    );
   }
 
   public getJobDetail(jobId: string): Observable<DetailedJob> {
@@ -20,6 +33,8 @@ export class JobService {
   }
 
   public setFavorite(jobId: number, setTo: boolean) {
-    alert(`TODO - ${jobId} - ${setTo}`);
+    setTo
+      ? this.localStorageService.saveFavoriteId(jobId)
+      : this.localStorageService.removeFavoriteId(jobId);
   }
 }

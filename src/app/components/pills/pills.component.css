@@ -1,0 +1,15 @@
+ul.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  li {
+    p.pill {
+      background-color: var(--color-pill);
+      color: var(--color-text-invert);
+      border-radius: 15px;
+      padding: 2px 5px;
+      font-size: 12px;
+    }
+  }
+}

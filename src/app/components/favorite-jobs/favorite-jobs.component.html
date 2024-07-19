@@ -1,3 +1,5 @@
+@if (favorites$ | async; as favorites) {
 <article class="favorites">
-  <app-job-cards [jobs]="favorites()"></app-job-cards>
+  <app-job-cards [jobs]="favorites"></app-job-cards>
 </article>
+}

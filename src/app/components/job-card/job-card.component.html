@@ -12,7 +12,7 @@
     </p>
   </div>
   <app-favorite-button
-    [isFavorite]="false"
+    [isFavorite]="isFavorite()"
     (favoriteButtonClicked)="setFavorite(job().id, $event)"
   ></app-favorite-button>
 </div>

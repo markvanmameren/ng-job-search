@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  align-items: center;
 
   .details {
     flex-grow: 1;
@@ -10,6 +11,7 @@
 
     a {
       h2.title {
+        padding: 0;
         color: var(--color-text-primary);
         font-size: 16px;
         font-weight: 700;

@@ -1,7 +1,9 @@
 :root {
   --color-text-primary: #434c5c;
   --color-text-secondary: #81868c;
+  --color-text-tertiary: #e0e4e9;
   --color-text-invert: white;
   --color-favorite: #fbed41;
+  --color-pill: #708fb5;
   --color-bg: #eef2f6;
 }
