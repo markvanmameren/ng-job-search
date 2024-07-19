@@ -1,9 +1,15 @@
 <div class="job" role="gridcell">
   <img [src]="job().companyLogo" />
   <div class="details">
-    <p>{{ job().title }}</p>
-    <p>{{ job().companyName }}</p>
-    <p>{{ job().reference }}</p>
+    <a [routerLink]="['/jobs', job().id]">
+      <h2 class="title">
+        {{ job().title }}
+      </h2>
+    </a>
+    <p class="subtitle">
+      <span>{{ job().companyName }}</span>
+      <span>Reference: {{ job().reference }}</span>
+    </p>
   </div>
   <app-favorite-button
     [isFavorite]="false"

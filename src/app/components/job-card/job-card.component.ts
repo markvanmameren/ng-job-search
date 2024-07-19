@@ -1,4 +1,5 @@
 import { Component, inject, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { JobService } from '../../services/job/job.service';
 import { Job } from '../../types/job.interface';
 import { FavoriteButtonComponent } from '../favorite-button/favorite-button.component';
@@ -6,7 +7,7 @@ import { FavoriteButtonComponent } from '../favorite-button/favorite-button.comp
 @Component({
   selector: 'app-job-card',
   standalone: true,
-  imports: [FavoriteButtonComponent],
+  imports: [FavoriteButtonComponent, RouterLink],
   templateUrl: './job-card.component.html',
   styleUrl: './job-card.component.css',
 })
