@@ -19,7 +19,7 @@ describe('AllJobsComponent', () => {
     jobServiceSpy = jasmine.createSpyObj<JobService>(
       'JobService',
       {},
-      { jobs: mockJobs },
+      { jobsWithFavorites: mockJobs },
     );
 
     await TestBed.configureTestingModule({

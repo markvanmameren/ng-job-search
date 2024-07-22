@@ -15,16 +15,16 @@ export class JobService {
     this.localStorageService.readFavoriteJobIds(),
   );
 
-  private jobsSignal = toSignal(this.jobApiService.getAllJobs$(), {
+  private jobs = toSignal(this.jobApiService.getAllJobs$(), {
     initialValue: [],
   });
 
-  public jobs = computed<Array<Job & Favorite>>(() =>
-    this.jobsSignal().map(this.combine),
+  public jobsWithFavorites = computed<Array<Job & Favorite>>(() =>
+    this.jobs().map(this.combineJobWithFavorite),
   );
-
+  //
   public favoriteJobs = computed<Array<Job & Favorite>>(() =>
-    this.jobs().filter((job) => job.isFavorite),
+    this.jobsWithFavorites().filter((job) => job.isFavorite),
   );
 
   constructor() {
@@ -50,7 +50,7 @@ export class JobService {
   public isFavoriteJob = (jobId: number): boolean =>
     this.favoriteJobIds().includes(jobId);
 
-  private combine = <T extends Job>(job: T): T & Favorite =>
+  private combineJobWithFavorite = <T extends Job>(job: T): T & Favorite =>
     this.isFavoriteJob(job.id)
       ? { ...job, isFavorite: true }
       : { ...job, isFavorite: false };

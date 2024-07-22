@@ -13,5 +13,5 @@ import { JobCardsComponent } from '../job-cards/job-cards.component';
 export class AllJobsComponent {
   jobService = inject(JobService);
 
-  jobs = this.jobService.jobs;
+  jobs = this.jobService.jobsWithFavorites;
 }

@@ -12,7 +12,7 @@ import { Job, JobDetails } from '../../interfaces/job.interface';
 import { jobsUrl } from '../job/job.constants';
 import { JobApiService } from './job-api.service';
 
-fdescribe('JobApiService', () => {
+describe('JobApiService', () => {
   let service: JobApiService;
   let httpTestingController: HttpTestingController;
 

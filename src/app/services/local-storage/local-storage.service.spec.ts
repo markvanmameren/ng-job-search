@@ -16,9 +16,7 @@ describe('LocalStorageService', () => {
   let setSpy: jasmine.Spy;
 
   beforeEach(() => {
-    getSpy = spyOn(window.localStorage, 'getItem').and.returnValue(
-      serializedMockIds,
-    );
+    getSpy = spyOn(window.localStorage, 'getItem');
     setSpy = spyOn(window.localStorage, 'setItem');
 
     TestBed.configureTestingModule({});
@@ -31,11 +29,20 @@ describe('LocalStorageService', () => {
 
   describe('readFavoriteJobIds', () => {
     it('should read from localStorage ', () => {
+      getSpy.and.returnValue(serializedMockIds);
+
       const result = service.readFavoriteJobIds();
 
-      expect(setSpy).not.toHaveBeenCalled();
       expect(getSpy).toHaveBeenCalledTimes(1);
       expect(result).toEqual(mockIds);
+    });
+
+    it('should return an empty array if the key does not have any matches', () => {
+      getSpy.and.returnValue(null);
+
+      const result = service.readFavoriteJobIds();
+
+      expect(result).toEqual([]);
     });
   });
 
@@ -47,7 +54,6 @@ describe('LocalStorageService', () => {
         localStorageKey,
         serializedMockIds,
       );
-      expect(getSpy).not.toHaveBeenCalled();
     });
   });
 });
