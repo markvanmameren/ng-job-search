@@ -1,8 +1,7 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { JobService } from '../../services/job/job.service';
-import { LocalStorageService } from '../../services/local-storage/local-storage.service';
-import { Job } from '../../types/job.interface';
+import { Favorite, Job } from '../../types/job.interface';
 import { FavoriteButtonComponent } from '../favorite-button/favorite-button.component';
 
 @Component({
@@ -13,16 +12,13 @@ import { FavoriteButtonComponent } from '../favorite-button/favorite-button.comp
   styleUrl: './job-card.component.css',
 })
 export class JobCardComponent {
+  job = input.required<Job & Favorite>();
+
   jobService = inject(JobService);
-  localStorageService = inject(LocalStorageService);
 
-  job = input.required<Job>();
-
-  isFavorite = computed(() =>
-    this.localStorageService.isStoredFavoriteId(this.job().id)
-  );
-
-  setFavorite(jobId: number, setTo: boolean): void {
-    this.jobService.setFavorite(jobId, setTo);
+  setFavorite(jobId: number, isFavorite: boolean): void {
+    isFavorite
+      ? this.jobService.addFavorite(jobId)
+      : this.jobService.removeFavorite(jobId);
   }
 }

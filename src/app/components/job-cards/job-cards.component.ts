@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Job } from '../../types/job.interface';
+import { Favorite, Job } from '../../types/job.interface';
 import { JobCardComponent } from '../job-card/job-card.component';
 
 @Component({
@@ -10,5 +10,5 @@ import { JobCardComponent } from '../job-card/job-card.component';
   styleUrl: './job-cards.component.css',
 })
 export class JobCardsComponent {
-  jobs = input.required<Job[]>();
+  jobs = input.required<Array<Job & Favorite>>();
 }

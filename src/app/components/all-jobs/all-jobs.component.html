@@ -1,5 +1,3 @@
-@if (jobs$ | async; as jobs) {
 <article class="jobs">
-  <app-job-cards [jobs]="jobs"></app-job-cards>
+  <app-job-cards [jobs]="jobs()"></app-job-cards>
 </article>
-}

@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw';
-import { DetailedJob, Job } from './app/types/job.interface';
+import { Job, JobDetails } from './app/types/job.interface';
 
-export const DETAILED: Record<number, DetailedJob> = {
+export const DETAILED: Record<number, JobDetails> = {
   75278: {
     id: 75278,
     companyName: 'Scroll.io',

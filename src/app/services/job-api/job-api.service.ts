@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DetailedJob, Job } from '../../types/job.interface';
+import { Job, JobDetails } from '../../types/job.interface';
 import { jobsUrl } from '../job/job.constants';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class JobApiService {
     return this.httpClient.get<Job[]>(jobsUrl);
   }
 
-  public getJobDetail(jobId: string): Observable<DetailedJob> {
-    return this.httpClient.get<DetailedJob>(`${jobsUrl}/${jobId}`);
+  public getJobDetails(jobId: number): Observable<JobDetails> {
+    return this.httpClient.get<JobDetails>(`${jobsUrl}/${jobId}`);
   }
 }

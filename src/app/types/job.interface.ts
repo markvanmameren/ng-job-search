@@ -6,7 +6,7 @@ export interface Job {
   reference: string;
 }
 
-export interface DetailedJob extends Job {
+export interface JobDetails extends Job {
   location: string;
   industries: string[];
   types: string[];
