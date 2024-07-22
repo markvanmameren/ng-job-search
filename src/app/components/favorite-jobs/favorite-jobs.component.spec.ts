@@ -8,10 +8,9 @@ describe('FavoriteJobsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FavoriteJobsComponent]
-    })
-    .compileComponents();
-    
+      imports: [FavoriteJobsComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FavoriteJobsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,5 +1,5 @@
 <div class="job" role="gridcell">
-  <img [src]="job().companyLogo" />
+  <img [src]="job().companyLogo" [alt]="job().companyName" />
   <div class="details">
     <a [routerLink]="['/jobs', job().id]">
       <h2 class="title">
