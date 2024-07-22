@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Favorite, Job } from '../../types/job.interface';
+import { Favorite, Job } from '../../interfaces/job.interface';
 import { JobCardComponent } from '../job-card/job-card.component';
 
 @Component({

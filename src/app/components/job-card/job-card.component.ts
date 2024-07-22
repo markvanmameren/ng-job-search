@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Favorite, Job } from '../../interfaces/job.interface';
 import { JobService } from '../../services/job/job.service';
-import { Favorite, Job } from '../../types/job.interface';
 import { FavoriteButtonComponent } from '../favorite-button/favorite-button.component';
 
 @Component({

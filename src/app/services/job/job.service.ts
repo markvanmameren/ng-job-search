@@ -1,6 +1,6 @@
 import { computed, effect, inject, Injectable, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Favorite, Job } from '../../types/job.interface';
+import { Favorite, Job } from '../../interfaces/job.interface';
 import { JobApiService } from '../job-api/job-api.service';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 

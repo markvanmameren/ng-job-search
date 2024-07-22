@@ -2,9 +2,9 @@ import { AsyncPipe, DatePipe, Location } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable, of, switchMap } from 'rxjs';
+import { JobDetails } from '../../interfaces/job.interface';
 import { JobApiService } from '../../services/job-api/job-api.service';
 import { JobService } from '../../services/job/job.service';
-import { JobDetails } from '../../types/job.interface';
 import { PillsComponent } from '../pills/pills.component';
 
 @Component({

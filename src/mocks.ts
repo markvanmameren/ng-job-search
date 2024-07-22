@@ -1,5 +1,5 @@
 import { http, HttpResponse } from 'msw';
-import { Job, JobDetails } from './app/types/job.interface';
+import { Job, JobDetails } from './app/interfaces/job.interface';
 
 export const DETAILED: Record<number, JobDetails> = {
   75278: {
