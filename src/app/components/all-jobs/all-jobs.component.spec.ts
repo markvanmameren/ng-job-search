@@ -7,13 +7,12 @@ import { Favorite, Job } from '../../interfaces/job.interface';
 import { JobService } from '../../services/job/job.service';
 import { AllJobsComponent } from './all-jobs.component';
 
-fdescribe('AllJobsComponent', () => {
+describe('AllJobsComponent', () => {
   let component: AllJobsComponent;
   let fixture: ComponentFixture<AllJobsComponent>;
 
   let mockJobs: WritableSignal<Array<Job & Favorite>>;
   let jobServiceSpy: jasmine.SpyObj<JobService>;
-  let activatedRouteSpy: jasmine.SpyObj<ActivatedRoute>;
 
   beforeEach(async () => {
     mockJobs = signal(ALL_JOBS.map((job) => ({ ...job, isFavorite: false })));
@@ -23,19 +22,13 @@ fdescribe('AllJobsComponent', () => {
       { jobs: mockJobs },
     );
 
-    activatedRouteSpy = jasmine.createSpyObj<ActivatedRoute>(
-      'ActivatedRoute',
-      [],
-      ['paramMap'],
-    );
-
     await TestBed.configureTestingModule({
       imports: [AllJobsComponent],
       providers: [
         { provide: JobService, useValue: jobServiceSpy },
         {
           provide: ActivatedRoute,
-          useValue: activatedRouteSpy,
+          useValue: {},
         },
       ],
     }).compileComponents();

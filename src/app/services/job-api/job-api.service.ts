@@ -10,11 +10,11 @@ import { jobsUrl } from '../job/job.constants';
 export class JobApiService {
   private httpClient = inject(HttpClient);
 
-  public getAllJobs(): Observable<Job[]> {
+  public getAllJobs$(): Observable<Job[]> {
     return this.httpClient.get<Job[]>(jobsUrl);
   }
 
-  public getJobDetails(jobId: number): Observable<JobDetails> {
+  public getJobDetails$(jobId: number): Observable<JobDetails> {
     return this.httpClient.get<JobDetails>(`${jobsUrl}/${jobId}`);
   }
 }

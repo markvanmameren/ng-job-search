@@ -13,7 +13,6 @@ describe('FavoriteJobsComponent', () => {
 
   let mockFavorites: WritableSignal<Array<Job & Favorite>>;
   let jobServiceSpy: jasmine.SpyObj<JobService>;
-  let activatedRouteSpy: jasmine.SpyObj<ActivatedRoute>;
 
   beforeEach(async () => {
     mockFavorites = signal(
@@ -25,19 +24,13 @@ describe('FavoriteJobsComponent', () => {
       { favoriteJobs: mockFavorites },
     );
 
-    activatedRouteSpy = jasmine.createSpyObj<ActivatedRoute>(
-      'ActivatedRoute',
-      [],
-      ['paramMap'],
-    );
-
     await TestBed.configureTestingModule({
       imports: [FavoriteJobsComponent],
       providers: [
         { provide: JobService, useValue: jobServiceSpy },
         {
           provide: ActivatedRoute,
-          useValue: activatedRouteSpy,
+          useValue: {},
         },
       ],
     }).compileComponents();

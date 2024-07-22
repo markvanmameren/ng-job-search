@@ -15,7 +15,7 @@ export class JobService {
     this.localStorageService.readFavoriteJobIds(),
   );
 
-  private jobsSignal = toSignal(this.jobApiService.getAllJobs(), {
+  private jobsSignal = toSignal(this.jobApiService.getAllJobs$(), {
     initialValue: [],
   });
 

@@ -7,13 +7,12 @@ import { JobService } from '../../services/job/job.service';
 import { setComponentInput } from '../../testing/utilities/set-component-input.util';
 import { JobCardComponent } from './job-card.component';
 
-fdescribe('JobCardComponent', () => {
+describe('JobCardComponent', () => {
   let component: JobCardComponent;
   let fixture: ComponentFixture<JobCardComponent>;
 
   let mockJob: Job & Favorite;
   let jobServiceSpy: jasmine.SpyObj<JobService>;
-  let activatedRouteSpy: jasmine.SpyObj<ActivatedRoute>;
 
   beforeEach(async () => {
     mockJob = { ...ALL_JOBS[0], isFavorite: false };
@@ -22,19 +21,13 @@ fdescribe('JobCardComponent', () => {
       'removeFavorite',
     ]);
 
-    activatedRouteSpy = jasmine.createSpyObj<ActivatedRoute>(
-      'ActivatedRoute',
-      [],
-      ['paramMap'],
-    );
-
     await TestBed.configureTestingModule({
       imports: [JobCardComponent],
       providers: [
         { provide: JobService, useValue: jobServiceSpy },
         {
           provide: ActivatedRoute,
-          useValue: activatedRouteSpy,
+          useValue: {},
         },
       ],
     }).compileComponents();
