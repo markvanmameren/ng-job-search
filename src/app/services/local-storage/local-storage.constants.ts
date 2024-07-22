@@ -1,2 +1,2 @@
-export const key = 'ng-job-search';
-export const separator = ',';
+export const localStorageKey = 'ng-job-search';
+export const localStorageSeparator = ',';

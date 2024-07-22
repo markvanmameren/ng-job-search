@@ -13,3 +13,7 @@ export interface DetailedJob extends Job {
   description: string;
   publishDate: string;
 }
+
+export interface Favorite {
+  isFavorite: boolean;
+}
