@@ -2,30 +2,11 @@
   margin: 0;
   padding: 0;
   border: 0;
-  outline: 0;
   box-sizing: border-box;
-  -webkit-border-horizontal-spacing: 0;
-  -webkit-border-vertical-spacing: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: subpixel-antialiased;
-  padding-block: 0;
-  padding-inline: 0;
 }
 
 a {
   text-decoration: none;
-}
-
-ul {
-  list-style: none;
 }
 
 button,

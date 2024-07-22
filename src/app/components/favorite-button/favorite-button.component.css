@@ -1,8 +1,9 @@
 button {
   display: flex;
+  transition: color 0.3s linear;
 
   &:not(.favorite) svg.star {
-    color: var(--color-text-primary);
+    color: transparent;
   }
 
   &.is-favorite svg.star {

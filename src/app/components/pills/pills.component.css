@@ -2,13 +2,14 @@ ul.pills {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  list-style: none;
 
   li {
     p.pill {
       background-color: var(--color-pill);
       color: var(--color-text-invert);
       border-radius: 15px;
-      padding: 2px 5px;
+      padding: 2px 8px;
       font-size: 12px;
     }
   }

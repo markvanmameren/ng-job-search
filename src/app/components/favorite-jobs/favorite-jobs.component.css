@@ -1,0 +1,9 @@
+p.no-favorites {
+  text-align: center;
+
+  a {
+    color: var(--color-pill);
+    text-decoration: underline;
+    font-weight: 700;
+  }
+}

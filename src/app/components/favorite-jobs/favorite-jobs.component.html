@@ -1,3 +1,11 @@
 <article class="favorites">
-  <app-job-cards [jobs]="favorites()"></app-job-cards>
+  @if (favorites().length > 1) {
+    <app-job-cards [jobs]="favorites()"></app-job-cards>
+  } @else {
+    <p class="no-favorites">
+      No favorites found...<br />
+      Go to the <a [routerLink]="['/jobs']">Jobs tab</a> to choose your
+      favorites.
+    </p>
+  }
 </article>
