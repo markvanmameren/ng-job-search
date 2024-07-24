@@ -45,6 +45,19 @@ describe('JobService', () => {
     expect(service).toBeTruthy();
   });
 
+  describe('effect', () => {
+    it('should write to local storage', () => {
+      const expected = [...initialFavoriteJobIds, newFavoriteJobId];
+
+      service.addFavorite(newFavoriteJobId);
+      TestBed.flushEffects();
+
+      expect(
+        localStorageServiceSpy.writeFavoriteJobIds,
+      ).toHaveBeenCalledOnceWith(expected);
+    });
+  });
+
   describe('jobsWithFavorites', () => {
     it('should combine all the jobs from the API with the job-ids from local storage', () => {
       const expected: Array<Job & Favorite> = ALL_JOBS.map((job) =>
